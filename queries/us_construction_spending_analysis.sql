@@ -1,15 +1,15 @@
 -- ============================================================================
 -- US CONSTRUCTION SPENDING ANALYSIS
 -- ============================================================================
--- Dataset:  US Census Bureau — Value of Construction Put in Place (FRED)
+-- Dataset:  US Census Bureau - Value of Construction Put in Place (FRED)
 -- Series:   TTLCONS, TLRESCONS, TLNRESCONS
--- Period:   January 2002 – December 2025 (288 monthly observations)
+-- Period:   January 2002 - December 2025 (288 monthly observations)
 -- Units:    Millions of USD, seasonally adjusted annual rate
 -- Author:   Tommy Nguyen
 --
 -- CONTEXT:  This analysis comes from 5+ years working in building materials
 --           sales in Sydney. Every query here maps to a real business question
---           I've encountered — forecasting demand, understanding downturns,
+--           I've encountered: forecasting demand, understanding downturns,
 --           and knowing which sector is driving the orders we see on the ground.
 -- ============================================================================
 
@@ -78,8 +78,8 @@ ORDER BY SpendingYear;
 --            calculate the residential share as a percentage. This reveals
 --            structural shifts in where construction dollars flow.
 --
--- WHAT I FOUND: The residential share swung from 56.4% (2005) to 28.7% (2009)
---               — nearly halving in four years. It recovered to 51% during
+-- WHAT I FOUND: The residential share swung from 56.4% (2005) to 28.7% (2009),
+--               nearly halving in four years. It recovered to 51% during
 --               COVID but has since settled around 42-43%. The mix is never
 --               stable; it's always shifting.
 -- ============================================================================
@@ -100,7 +100,7 @@ ORDER BY SpendingYear;
 
 
 -- ============================================================================
--- QUERY 3: Economic Cycle Analysis — Impact of Major Events
+-- QUERY 3: Economic Cycle Analysis - Impact of Major Events
 -- ============================================================================
 -- QUESTION:  How did the 2008 GFC and COVID-19 affect construction spending?
 --            When clients ask "how bad could it get?", I want real numbers.
@@ -110,8 +110,8 @@ ORDER BY SpendingYear;
 --            come from NBER recession dates and industry consensus.
 --
 -- WHAT I FOUND: The GFC crash was devastating (-19.8% over 30 months), but
---               the slow recovery was almost worse — spending flatlined for
---               42 months before meaningful growth returned. COVID, by contrast,
+--               the slow recovery was almost worse: spending flatlined for
+--               42 months with no meaningful growth. COVID, by contrast,
 --               barely registered (-2.8% at the worst) before a massive surge.
 -- ============================================================================
 
@@ -152,7 +152,7 @@ ORDER BY EconomicPeriod;
 
 
 -- ============================================================================
--- QUERY 4: Monthly Seasonal Patterns — PIVOT Table
+-- QUERY 4: Monthly Seasonal Patterns - PIVOT Table
 -- ============================================================================
 -- QUESTION:  Do certain months consistently see higher spending?
 --            We plan our inventory and staffing around seasonality, so
@@ -190,7 +190,7 @@ ORDER BY PivotYear;
 
 
 -- ============================================================================
--- QUERY 5: Rolling 12-Month Average — Trend Smoothing
+-- QUERY 5: Rolling 12-Month Average - Trend Smoothing
 -- ============================================================================
 -- QUESTION:  What does the underlying trend look like without monthly noise?
 --            Rolling averages are how I actually track whether the market is
@@ -235,11 +235,11 @@ ORDER BY Date;
 --
 -- APPROACH:  Use LAG() at 1-month, 3-month, and 12-month intervals to
 --            calculate MoM, QoQ, and YoY percentage changes for every data
---            point. The three timeframes give different signals — MoM is noisy,
+--            point. The three timeframes give different signals: MoM is noisy,
 --            QoQ shows quarter-level direction, YoY strips out seasonality.
 --
 -- WHAT I FOUND: The worst single-month YoY decline was -17.5% in October 2009
---               — well after the recession officially ended in June 2009.
+--               This was well after the recession officially ended in June 2009.
 --               Construction is a lagging indicator. The best was +18.4% in
 --               April 2022 during the post-COVID surge.
 -- ============================================================================
@@ -265,7 +265,7 @@ ORDER BY Date;
 
 
 -- ============================================================================
--- QUERY 7: Peak-to-Trough Analysis — GFC Deep Dive
+-- QUERY 7: Peak-to-Trough Analysis - GFC Deep Dive
 -- ============================================================================
 -- QUESTION:  How far did construction spending actually fall during the GFC,
 --            and how long did it take to recover? This is the "war story"
@@ -278,8 +278,8 @@ ORDER BY Date;
 --
 -- WHAT I FOUND: Total spending fell 37.1% from peak ($1.206B) to trough ($758M).
 --               Residential was even worse: down 64.3% ($684M to $244M).
---               Recovery to pre-GFC peak levels didn't happen until June 2016
---               — nearly a full decade. That's the number I cite when someone
+--               Recovery to pre-GFC peak levels didn't happen until June 2016,
+--               nearly a full decade. That's the number I cite when someone
 --               asks about downside risk in construction.
 -- ============================================================================
 
@@ -312,7 +312,7 @@ ORDER BY Date;
 
 
 -- ============================================================================
--- QUERY 8: Residential Share Over Time — Quarterly View
+-- QUERY 8: Residential Share Over Time - Quarterly View
 -- ============================================================================
 -- QUESTION:  How is the residential/non-residential balance shifting quarter
 --            by quarter? In building materials, this determines product mix
